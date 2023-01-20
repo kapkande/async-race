@@ -1,6 +1,6 @@
-// // @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-// // @import "vars";
-// // @import "normalize";
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import "blockCars";
+// @import "normalize";
 // // @import "wrapper";
 // // @import "header";
 // // @import "main";
@@ -10,11 +10,11 @@
 // // @import "basket";
 // // @import "payment";
 // // @import "footer";
-// body {
-//     font-family: 'Roboto', sans-serif;
-//     background-color: $white;
-//     color: $black;
-// }
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    color: black;
+}
 // .hidden {
 //     display: none;
 // }
@@ -26,3 +26,4 @@
 //   -webkit-appearance: none;
 //   margin: 0;
 // }
+
