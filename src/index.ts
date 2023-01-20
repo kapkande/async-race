@@ -10,6 +10,8 @@ import './assets/components/animation/setAmimation';
 // import showMain from './assets/components/main/showMain';
 // import setBlock from './assets/components/main/showMainBlock'
 import createCars from "./assets/components/createCars"
+import setPagination from "./assets/components/pagination/pagination"
+
 import "./assets/components/main/createMainHtml"
 import "./assets/components/main/createGameHtml"
 import interactionGarage from "./assets/components/interactionGarage"
@@ -19,6 +21,7 @@ import arrayCars from "./assets/components/date/arrayCars"
 import removeItemActive from './assets/components/removeItemActive'
 import setDisabled from "./assets/components/setDisabled"
 
+setPagination()
 
 const inputCriate = document.querySelector('.inputCriateSubmit')
 inputCriate?.addEventListener('click', handleFormSubmit)
@@ -53,7 +56,8 @@ function inputUpdate() {
 
 
 
-createCars()
+// createCars()
+setPagination()
 // interactionWinners.getWinners().then((date:object)=>console.log(date));
 
 // interactionEngine.switchEngine(1,'drive').then((date:object)=>console.log(date));

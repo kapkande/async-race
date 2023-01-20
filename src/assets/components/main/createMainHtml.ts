@@ -98,9 +98,12 @@ blockButton.appendChild(buttonGenerate);
 sectionForm.appendChild(blockButton);
 
 
-
 let sectionGame = document.createElement('section');
 sectionGame.classList.add('section__game');
+let paginationBlock = document.createElement('div')
+paginationBlock.classList.add('paginationBlock');
+sectionGame.appendChild(paginationBlock);
+
 
 wrapper.appendChild(sectionGame);
 

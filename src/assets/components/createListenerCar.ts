@@ -3,11 +3,12 @@ import createCar from "./main/createGameHtml"
 import setDisabled from "./setDisabled"
 import removeItemActive from "./removeItemActive"
 import setAmimation from "./animation/setAmimation"
+import setQuantityCars from "./main/setNumbarPage"
 
 function createListenerCar(carItem: HTMLElement, id: number) {
     carItem.addEventListener('click', (e) => {
         // console.log(e.target);
-
+        
         if (!(e!.target instanceof HTMLElement || e!.target instanceof HTMLButtonElement)) { return; }
       
         if (['button button__start'].includes(e.target?.className)) {
@@ -20,12 +21,13 @@ function createListenerCar(carItem: HTMLElement, id: number) {
         }
         if (['button button__remuve'].includes(e.target?.className)) {
             interactionGarage.deleteCar(id)
+            setQuantityCars()
             carItem.remove()
         }
         if (['button button__select'].includes(e.target?.className)) {
             removeItemActive()
             carItem.classList.add('item-active')
-            setDisabled()
+            setDisabled();
         }
     })
 }
