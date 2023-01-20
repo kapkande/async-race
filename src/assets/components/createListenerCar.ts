@@ -1,5 +1,5 @@
 import interactionGarage from "./interactionGarage"
-import createCar from "./main/createGameHtml"
+import setNumberPage from "./pagination/setNumberPage"
 import setDisabled from "./setDisabled"
 import removeItemActive from "./removeItemActive"
 import setAmimation from "./animation/setAmimation"
@@ -23,6 +23,7 @@ function createListenerCar(carItem: HTMLElement, id: number) {
             interactionGarage.deleteCar(id)
             setQuantityCars()
             carItem.remove()
+            setNumberPage()
         }
         if (['button button__select'].includes(e.target?.className)) {
             removeItemActive()

@@ -9,23 +9,23 @@ import './assets/components/animation/setAmimation';
 // import loadBasket from './assets/components/basket/basketLoader';
 // import showMain from './assets/components/main/showMain';
 // import setBlock from './assets/components/main/showMainBlock'
-import createCars from "./assets/components/createCars"
+// import createCars from "./assets/components/createCars"
 import setPagination from "./assets/components/pagination/pagination"
+import setNumberPage from "./assets/components/pagination/setNumberPage"
+
 
 import "./assets/components/main/createMainHtml"
 import "./assets/components/main/createGameHtml"
 import interactionGarage from "./assets/components/interactionGarage"
-import interactionEngine from "./assets/components/interactionEngine"
 import createCar from "./assets/components/main/createGameHtml"
 import arrayCars from "./assets/components/date/arrayCars"
 import removeItemActive from './assets/components/removeItemActive'
 import setDisabled from "./assets/components/setDisabled"
 
-setPagination()
 
 const inputCriate = document.querySelector('.inputCriateSubmit')
-inputCriate?.addEventListener('click', handleFormSubmit)
-async function handleFormSubmit() {
+inputCriate?.addEventListener('click',criateInput)
+async function criateInput() {
   if (!inputCriateText.value) { return };
   const date = {
     "name": inputCriateText.value,
@@ -36,6 +36,7 @@ async function handleFormSubmit() {
   });
   inputCriateColor.value = '#000000';
   inputCriateText.value = '';
+  setNumberPage()
 }
 
 
@@ -56,7 +57,7 @@ function inputUpdate() {
 
 
 
-// createCars()
+
 setPagination()
 // interactionWinners.getWinners().then((date:object)=>console.log(date));
 
