@@ -1,8 +1,8 @@
-import InteractionCars from "./date/InteractionCars"
+import InteractionGarage from "./date/InteractionGarage"
 import ObjectData from "./date/ObjectData"
 
 
-const interactionGarage: InteractionCars = {
+const interactionGarage: InteractionGarage = {
     rootLinck: 'http://127.0.0.1:3000/garage',
     getCars: async () => {
         const response = await fetch(interactionGarage.rootLinck)
