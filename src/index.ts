@@ -1,6 +1,6 @@
 // import './assets/icons/basket.svg';
 import './assets/styles/index.scss';
-import './assets/components/animation/setAmimation';
+import './assets/components/animation/startAllCars';
 
 
 // import './assets/components/createListenerCar';
@@ -18,7 +18,8 @@ import createCar from "./assets/components/main/createGameHtml"
 import arrayCars from "./assets/components/date/arrayCars"
 import removeItemActive from './assets/components/removeItemActive'
 import setDisabled from "./assets/components/setDisabled"
-
+import setAmimation from "./assets/components/animation/setAmimation"
+import startAllCars from "./assets/components/animation/startAllCars"
 
 const inputCriate = document.querySelector('.inputCriateSubmit')
 inputCriate?.addEventListener('click', handleFormSubmit)
@@ -41,7 +42,7 @@ inputUpdateSubmit?.addEventListener('click', inputUpdate);
 function inputUpdate() {
   const itemActive:HTMLElement | null = document.querySelector('.item-active');
   if (!inputUpdateText.value) { return };
-  itemActive!.children[0].children[2].textContent = inputUpdateText?.value
+  itemActive!.children[0].children[2].textContent = inputUpdateText?.value;
   const img = itemActive!.children[2] as HTMLElement;
   img!.style.fill = String(inputUpdateColor?.value);
   
@@ -52,16 +53,30 @@ function inputUpdate() {
 }
 
 
+const buttonsBlock: HTMLInputElement | null = document.querySelector('.buttons-block');
+buttonsBlock?.addEventListener('click', managingAllCars);
+function managingAllCars(e:Event) {
+  if (!(e!.target instanceof HTMLElement || e!.target instanceof HTMLButtonElement)) { return; }
+      console.log(e!.target);
+  if (['button button__race'].includes(e.target?.className)) {
+    startAllCars()
+  };
+  if (['button button__reset'].includes(e.target?.className)) {
+     
+  };
+  if (['button button__gererate'].includes(e.target?.className)) {
+     
+  }
+}
+
+
 
 createCars()
 // interactionWinners.getWinners().then((date:object)=>console.log(date));
 
 // interactionEngine.switchEngine(1,'drive').then((date:object)=>console.log(date));
 
-const carsObject = {
-  "name": "Ford",
-  "color": "#ef3c40",
-}
+
 
 
 
