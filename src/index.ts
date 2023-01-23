@@ -21,6 +21,7 @@ import createCar from "./assets/components/main/createGameHtml"
 import arrayCars from "./assets/components/date/arrayCars"
 import removeItemActive from './assets/components/removeItemActive'
 import setDisabled from "./assets/components/setDisabled"
+import startAllCars from "./assets/components/animation/startAllCars"
 
 
 const inputCriate = document.querySelector('.inputCriateSubmit')
@@ -56,7 +57,21 @@ function inputUpdate() {
 }
 
 
-
+const buttonsBlock: HTMLInputElement | null = document.querySelector('.buttons-block');
+buttonsBlock?.addEventListener('click', managingAllCars);
+function managingAllCars(e:Event) {
+  if (!(e!.target instanceof HTMLElement || e!.target instanceof HTMLButtonElement)) { return; }
+      console.log(e!.target);
+  if (['button button__race'].includes(e.target?.className)) {
+    startAllCars()
+  };
+  if (['button button__reset'].includes(e.target?.className)) {
+     
+  };
+  if (['button button__gererate'].includes(e.target?.className)) {
+     
+  }
+}
 
 setPagination()
 // interactionWinners.getWinners().then((date:object)=>console.log(date));
