@@ -26,14 +26,17 @@ body {
     padding: 1px 5px 1px 5px;
     border-radius: 5px;
 }
-
+.page-active{
+    background-color: rgb(27, 184, 27);
+    color: black;
+}
 .button:hover {
     color: red;
 }
 
-// .hidden {
-//     display: none;
-// }
+.hidden {
+    display: none;
+}
 // input {
 //     border: solid $silver 1.5px;
 // }

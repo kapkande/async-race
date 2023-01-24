@@ -1,12 +1,13 @@
 import interactionEngine from '../interactionEngine'
-import setWinner from '../winner/setWinner'
+import saveWinners from '../winner/saveWinners'
 
+saveWinners
 async function setAmimation(carItem: HTMLElement) {
-  let start = new Date;
+  const start:Date = new Date;
   let step: number = 0;
   const stopStartEngine = await interactionEngine.stopStartEngine(carItem.id, 'started');
   const wigthLine = document.querySelector('.line')!.clientWidth - 60;
-  const velocity = stopStartEngine.velocity / 10;
+  const velocity = wigthLine * stopStartEngine.velocity / 30000;
 
   interactionEngine.switchEngine(carItem.id, 'drive').catch(function (e: string) {
     if (e == `SyntaxError: Unexpected token 'C', "Car has be"... is not valid JSON`) {
@@ -21,7 +22,11 @@ async function setAmimation(carItem: HTMLElement) {
       step = step + velocity;
       draw(step, img);
       let status: boolean = getStatus(step, wigthLine, carItem);
-      if (!status) { return };
+      if (!status) { 
+        const end:Date = new Date;
+        saveWinners(+carItem.id, start, end);
+         return 
+      };
       requestAnimationFrame(animate);
     });
 }

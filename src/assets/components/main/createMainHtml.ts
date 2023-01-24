@@ -26,7 +26,7 @@ wrapper.appendChild(main);
 
 let sectionForm = document.createElement('section');
 sectionForm.classList.add('section__form');
-wrapper.appendChild(sectionForm);
+main.appendChild(sectionForm);
 
 let formCriate = document.createElement('form');
 sectionForm.appendChild(formCriate);
@@ -105,7 +105,7 @@ paginationBlock.classList.add('paginationBlock');
 sectionGame.appendChild(paginationBlock);
 
 
-wrapper.appendChild(sectionGame);
+main.appendChild(sectionGame);
 
 let titleGame = document.createElement('div');
 titleGame.classList.add('game__title');
@@ -114,3 +114,21 @@ sectionGame.appendChild(titleGame);
 let subTitleGame = document.createElement('div');
 subTitleGame.classList.add('game__subTitle');
 sectionGame.appendChild(subTitleGame);
+
+
+let sectionWinners = document.createElement('section');
+sectionWinners.classList.add('section__winners', 'hidden');
+// sectionWinners.classList.add('section__winners');
+
+let titleWinners = document.createElement('div');
+titleWinners.classList.add('winners__title');
+sectionWinners.appendChild(titleWinners);
+
+let subTitleWinners = document.createElement('div');
+subTitleWinners.classList.add('winners__subTitle');
+sectionWinners.appendChild(subTitleWinners);
+
+sectionWinners.appendChild(titleWinners);
+sectionWinners.appendChild(subTitleWinners);
+
+main.appendChild(sectionWinners);

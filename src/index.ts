@@ -14,30 +14,43 @@ import setPagination from "./assets/components/pagination/pagination"
 import setNumberPage from "./assets/components/pagination/setNumberPage"
 
 
+// 11
 import "./assets/components/main/createMainHtml"
 import "./assets/components/main/createGameHtml"
+import './assets/components/winner/createTableHeader'
 import interactionGarage from "./assets/components/interactionGarage"
 import createCar from "./assets/components/main/createGameHtml"
 import arrayCars from "./assets/components/date/arrayCars"
 import removeItemActive from './assets/components/removeItemActive'
 import setDisabled from "./assets/components/setDisabled"
 import startAllCars from "./assets/components/animation/startAllCars"
+import setQuantityCars from "./assets/components/main/setNumbarPage"
+import swopPage from "./assets/components/main/swopPage"
+import createTable from "./assets/components/winner/createTableIe"
 
 
 const inputCriate = document.querySelector('.inputCriateSubmit')
 inputCriate?.addEventListener('click',criateInput)
 async function criateInput() {
+  
   if (!inputCriateText.value) { return };
   const date = {
     "name": inputCriateText.value,
     "color": inputCriateColor.value,
   };
-  await interactionGarage.createCar(date).then((e: arrayCars) => {
-    createCar(inputCriateText.value, inputCriateColor.value, e.id)
-  });
+  // console.log(document.querySelectorAll('.item-car'));
+  if (document.querySelectorAll('.item-car').length < 7) {
+    await interactionGarage.createCar(date).then((e: arrayCars) => {
+      createCar(inputCriateText.value, inputCriateColor.value, e.id)
+    });
+  }else{
+    await interactionGarage.createCar(date);
+  }
+  
   inputCriateColor.value = '#000000';
   inputCriateText.value = '';
   setNumberPage()
+  setQuantityCars()
 }
 
 
@@ -74,15 +87,14 @@ function managingAllCars(e:Event) {
 }
 
 setPagination()
+setQuantityCars()
+createTable()
+const header = document.querySelector('.header')
+header?.addEventListener('click', swopPage)
+
 // interactionWinners.getWinners().then((date:object)=>console.log(date));
 
 // interactionEngine.switchEngine(1,'drive').then((date:object)=>console.log(date));
-
-const carsObject = {
-  "name": "Ford",
-  "color": "#ef3c40",
-}
-
 
 
 // interactionGarage.getCars().then((data:any) => {console.log(data)})
