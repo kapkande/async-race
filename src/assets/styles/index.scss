@@ -26,10 +26,20 @@ body {
     padding: 1px 5px 1px 5px;
     border-radius: 5px;
 }
-.page-active{
+
+.page-active {
     background-color: rgb(27, 184, 27);
     color: black;
 }
+
+.anticon {
+    cursor: pointer;
+}
+
+.anticon:hover {
+    color: red;
+}
+
 .button:hover {
     color: red;
 }
@@ -37,6 +47,11 @@ body {
 .hidden {
     display: none;
 }
+
+.sorter-active svg {
+    fill: rgb(240, 0, 0);
+}
+
 // input {
 //     border: solid $silver 1.5px;
 // }
