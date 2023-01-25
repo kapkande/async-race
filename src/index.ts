@@ -104,3 +104,4 @@ header?.addEventListener('click', swopPage)
 // interactionCars.createCar('http://127.0.0.1:3000/garage', obj)
 
 // getasd('http://127.0.0.1:3000/garage').then((data) => {console.log(data)})
+

@@ -16,7 +16,7 @@ async function saveWinners(carItem: HTMLElement, start: Date) {
     const date: ObjWinners = {
         id: +carItem.id,
         wins: 1,
-        time: `${stop.getTime() - start.getTime()}`,
+        time: `${(stop.getTime() -  start.getTime())/1000}`,
     }
 
     if (!gwin!) {
