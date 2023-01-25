@@ -1,7 +1,7 @@
 interface ObjWinners {
     id: number,
     wins: number,
-    time: number,
+    time: string,
      
 }
 

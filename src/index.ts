@@ -26,7 +26,7 @@ import setDisabled from "./assets/components/setDisabled"
 import startAllCars from "./assets/components/animation/startAllCars"
 import setQuantityCars from "./assets/components/main/setNumbarPage"
 import swopPage from "./assets/components/main/swopPage"
-import createTable from "./assets/components/winner/createTableIe"
+import createTable from "./assets/components/winner/createTable"
 
 
 const inputCriate = document.querySelector('.inputCriateSubmit')

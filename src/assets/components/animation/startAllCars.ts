@@ -1,14 +1,15 @@
-import interactionEngine from '../interactionEngine'
-import setWinner from '../winner/setWinner'
 import setAmimation from "./setAmimation"
 
 function startAllCars() {
-    let startDate = new Date;
-    const itemCars:NodeListOf<Element> = document.querySelectorAll('.item-car') 
+    document.querySelector('.section__game')?.classList.add('game-active')
+    const itemCars: NodeListOf<Element> = document.querySelectorAll('.item-car')
     itemCars.forEach((element) => {
-        if (!(element instanceof HTMLElement)) {return};
+        if (!(element instanceof HTMLElement)) { return };
         element.classList.add('driving')
-        setAmimation(element)
+        setAmimation(element);
     });
 };
 export default startAllCars;
+
+// const end:Date = new Date;
+// saveWinners(+carItem.id, start, end);
